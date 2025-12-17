@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="content">
+    <!-- Loader -->
+    <div id="loader">
+      <img src="assets/aethered-logo.png" alt="Logo" class="logo-loader">
+    </div>
+
+    <!-- Top Navbar -->
+    <header class="top-nav">
+      <nav class="nav-container">
+        <!-- Logo -->
+        <a href="products.html" class="nav-logo">
+          <img src="assets/aethered-logo.png" alt="Logo">
+        </a>
+
+        <!-- Menu -->
+        <ul class="nav-menu">
+          <li><a href="products.html">Drops</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="demo.html">Demo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Tagline -->
+    <div class="tagline">We are here to help.</div>
+
+    <!-- Contact Card -->
+    <main class="contact-container">
+      <div class="contact-card">
+        <h1>Contact Us</h1>
+        <p class="contact-description">
+          We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+        </p>
+        <form class="contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your message" required></textarea>
+
+          <button type="submit" class="buy-button">Send Message</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2025 Zenith. All rights reserved.</p>
+        <nav class="footer-nav">
+        </nav>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

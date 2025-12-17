@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="icon" href="assets/aethered-logo.png" sizes="128x128" type="image/x-icon">
+
+  <!-- Fade-in / Fade-out -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: #ffffff;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-style: italic;
+      font-weight: lighter;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #000;
+      opacity: 0;
+      animation: fadeInText 0.8s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Button */
+    .enter-btn {
+      text-decoration: none;
+      background: #000;  /* เริ่มด้วยสีดำสนิท */
+      color: #fff;
+      padding: 10px 100px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 500;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      /* มิติพื้นฐาน */
+      box-shadow: 
+          0 3px 6px rgba(0,0,0,0.18);
+
+      transform: translateY(0);
+      transition: 
+          transform 0.35s cubic-bezier(.25,.46,.45,.94),
+          background-color 0.35s ease,
+          box-shadow 0.35s ease;
+
+      /* Fade-in effect */
+      opacity: 0;
+      animation: fadeInText 0.8s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    /* Hover = เปลี่ยนสี + เด้งขึ้น */
+    .enter-btn:hover {
+      background-color: #ffffff; /* เทาอ่อนขึ้น ตอน hover */
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.28);
+    }
+
+    /* Arrow */
+    .arrow {
+      font-size: 26px;
+      font-weight: bold;
+      transition: transform 0.25s ease;
+    }
+
+    /* Arrow move */
+    .enter-btn:hover .arrow {
+      transform: translateX(6px);
+      color: #000000;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>welcome</h1>
+
+  <!-- ปุ่มไปหน้าหลักของเว็บ -->
+  <a href="products.html" class="enter-btn" id="enter-btn" data-skip="true">
+    <span class="arrow">→</span>
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* === FADE-IN ตอนเข้า === */
+      document.body.style.opacity = 1;
+
+      /* === FADE-OUT ตอนกดปุ่ม === */
+      const enterBtn = document.getElementById("enter-btn");
+
+      enterBtn.addEventListener("click", (e) => {
+        e.preventDefault(); // กัน redirect ทันที
+
+        document.body.style.opacity = 0; // fade-out
+
+        setTimeout(() => {
+          window.location.href = enterBtn.href;
+        }, 350); // เวลา sync กับ transition
+      });
+    });
+  </script>
+
+</body>
+</html>
