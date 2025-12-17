@@ -340,13 +340,15 @@ body {
   .contact-card { padding: 25px; }
   .carousel-track { height: 300px; }
   .logo-loader { width: 120px; }
+  .product-info, .contact-container {
+    padding: 0 20px;}
 }
 
 @media (max-width: 480px) {
   .top-nav { padding: 8px 15px; }
   .top-nav nav a { font-size: 13px; padding: 3px 5px; }
 
-  .product-grid { gap: 15px; padding: 15px; }
+  .product-grid { gap: 15px; padding: 15px; grid-template-columns: repeat(1, 1fr); }
   .contact-card { padding: 20px; }
   .contact-form input,
   .contact-form textarea { font-size: 14px; }
